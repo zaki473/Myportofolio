@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "title": "Website BEM Vokasi 2025",
+    "category": "web",
+    "description": "Mengelola konten, pemeliharaan sistem website, mengarsipkan dokumentasi, dan menambahkan sistem request kemenbiro secara dinamis.",
+    "icon": "🏛️",
+    "tech": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "JavaScript",
+      "CSS"
+    ],
+    "status": "Completed",
+    "year": 2025,
+    "github": "https://github.com/me-dav/BEM25"
+  },
+  {
+    "id": 2,
+    "title": "Absensi Sekolah Multi Admin",
+    "category": "mobile",
+    "description": "Mengembangkan aplikasi absensi berbasis mobile dengan dukungan multi-admin dan manajemen data kehadiran berbagai tingkat pengguna.",
+    "icon": "🕒",
+    "tech": [
+      "Flutter",
+      "Dart",
+      "Firebase"
+    ],
+    "status": "Completed",
+    "year": 2025,
+    "github": "https://github.com/zaki/absensi-multi-admin"
+  },
+  {
+    "id": 3,
+    "title": "Website E-Commerce (Rifold.id)",
+    "category": "web",
+    "description": "Mengembangkan website e-commerce sederhana untuk produk pakaian brand Rifold dengan fitur katalog produk dan pemesanan sederhana.",
+    "icon": "🛒",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP"
+    ],
+    "status": "Completed",
+    "year": 2025,
+    "github": "https://github.com/zaki473/rifold.id"
+  },
+  {
+    "id": 4,
+    "title": "Website Next Your Life",
+    "category": "web",
+    "description": "Mengembangkan platform berbagi gambar terinspirasi dari Pinterest dengan fitur unggah gambar, deskripsi, dan manajemen database postingan.",
+    "icon": "🖼️",
+    "tech": [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB"
+    ],
+    "status": "Completed",
+    "year": 2025,
+    "github": "https://github.com/zaki/next-your-life"
+  },
+  {
+    "id": 5,
+    "title": "Aplikasi Keuangan (KOKAS)",
+    "category": "mobile",
+    "description": "Mengembangkan aplikasi pencatatan transaksi keuangan (pemasukan & pengeluaran) berkolaborasi dengan mahasiswa Program Studi Keuangan.",
+    "icon": "💰",
+    "tech": [
+      "Flutter",
+      "Dart",
+      "SQLite"
+    ],
+    "status": "Completed",
+    "year": 2026,
+    "github": "https://github.com/zaki473/kokas_apk"
+  },
+  {
+    "id": 6,
+    "title": "Game Kuis SpiceUp",
+    "category": "mobile",
+    "description": "Game edukasi kuis bertema rempah-rempah Indonesia dengan kustomisasi karakter, berkolaborasi dengan mahasiswa DKV.",
+    "icon": "🎮",
+    "tech": [
+      "Flutter",
+      "Dart",
+      "Flame Engine"
+    ],
+    "status": "Completed",
+    "year": 2026,
+    "github": "https://github.com/zaki473/spice-up-"
+  },
+  {
+    "id": 7,
+    "title": "LLM Tourism Recommendation",
+    "category": "ai",
+    "description": "Sistem rekomendasi tempat wisata di Indonesia menggunakan Large Language Model (LLM) dengan pengolahan dataset Kaggle.",
+    "icon": "🤖",
+    "tech": [
+      "Python",
+      "LLM",
+      "Pandas",
+      "Scikit-Learn"
+    ],
+    "status": "Completed",
+    "year": 2025,
+    "github": "https://github.com/zaki/llm-tourism-recommendation"
+  },
+  {
+    "id": 8,
+    "title": "Website Wedding Invitation",
+    "category": "web",
+    "description": "Website undangan pernikahan digital dengan desain elegan, informasi acara, galeri foto, dan fitur RSVP (konfirmasi kehadiran).",
+    "icon": "💍",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind CSS"
+    ],
+    "status": "Completed",
+    "year": 2025,
+    "github": "https://github.com/zaki473/wedding-invitation-Riyadh-and-Berliana"
+  },
+  {
+    "id": 9,
+    "title": "Website SmartOryza IoT",
+    "category": "iot",
+    "description": "Website monitoring pertanian pintar (smart agriculture) untuk irigasi sawah terintegrasi dengan Firebase Realtime Database.",
+    "icon": "🌱",
+    "tech": [
+      "Laravel",
+      "Firebase",
+      "IoT",
+      "ESP32",
+      "PHP"
+    ],
+    "status": "Completed",
+    "year": 2025,
+    "github": "https://github.com/zaki473/Oryza"
+  },
+  {
+    "id": 10,
+    "title": "Agrocircular Platform",
+    "category": "web",
+    "description": "Platform web barter dan jual-beli limbah pertanian dengan frontend Next.js dan backend Supabase untuk keperluan kompetisi.",
+    "icon": "♻️",
+    "tech": [
+      "Next.js",
+      "Supabase",
+      "React",
+      "TypeScript",
+      "Tailwind"
+    ],
+    "status": "Completed",
+    "year": 2025,
+    "github": "https://github.com/zaki473/olivia-agrocircular"
+  }
+]

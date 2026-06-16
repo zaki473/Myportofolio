@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "QA/QC Software & Bug Developer",
+    "description": "Melakukan pengujian (testing) terhadap aplikasi/software, mengidentifikasi dan melaporkan bug, serta melakukan debugging menggunakan metodologi Agile.",
+    "icon": "🛠️",
+    "year": 2021,
+    "category": "formal",
+    "issuer": "PT RetGoo Sentris Informa"
+  },
+  {
+    "id": 2,
+    "title": "Resepsionis Lobby & F&B Services",
+    "description": "Melayani tamu pada bagian penerimaan (front desk) dan kebutuhan Food & Beverage saat momen high-season.",
+    "icon": "🏊",
+    "year": 2025,
+    "category": "informal",
+    "issuer": "PT Adikarya Citra Abadi (Hawai Waterpark)"
+  },
+  {
+    "id": 3,
+    "title": "F&B Services",
+    "description": "Melayani pelanggan dalam pemesanan, penyajian produk, dan transaksi penjualan.",
+    "icon": "🍦",
+    "year": 2025,
+    "category": "informal",
+    "issuer": "Koono Gelato"
+  },
+  {
+    "id": 4,
+    "title": "Operational Staff (Freelance)",
+    "description": "Mengatur sirkulasi tamu dan jalannya prosesi di area pelaminan dalam acara pernikahan.",
+    "icon": "💍",
+    "year": 2026,
+    "category": "informal",
+    "issuer": "Wedding Organization – Sejutamakna"
+  },
+  {
+    "id": 5,
+    "title": "Mobile Developer (Freelance Project)",
+    "description": "Mengembangkan aplikasi keuangan dan game kuis custom berdasarkan kebutuhan klien lintas jurusan, menggunakan Flutter.",
+    "icon": "📱",
+    "year": 2026,
+    "category": "informal",
+    "issuer": "Freelance Project"
+  }
+]
