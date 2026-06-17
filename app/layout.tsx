@@ -4,7 +4,7 @@ import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Zaki's Portfolio — Windows XP Edition",
-  description: "Portfolio Zaki, Informatics Engineering Student",
+  description: "Portfolio Zaki, Information Technology Student",
 };
 
 export default function RootLayout({

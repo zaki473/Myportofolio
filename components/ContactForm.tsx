@@ -15,10 +15,10 @@ export default function ContactForm() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "62758110-d0ce-4340-9a25-2efc2a93b482", // We can use Web3Forms access key. Zaki can replace this if needed.
+          // Pastikan string access key ini persis dengan yang ada di dasbor/email Web3Forms kamu
+          access_key: "1a440fec-1fb5-40c7-bdda-e49421558876", 
           name: form.name,
           email: form.email,
           message: form.message,
@@ -27,9 +27,13 @@ export default function ContactForm() {
       });
 
       const result = await response.json();
-      if (result.success) {
+      
+      // Web3Forms mengembalikan JSON berupa { success: true/false, message: "..." }
+      if (response.ok && result.success) {
         setStatus("success");
       } else {
+        // Log pesan error dari server Web3Forms untuk mempermudah debugging
+        console.error("Web3Forms Error Message:", result.message);
         setStatus("error");
       }
     } catch (error) {
@@ -101,6 +105,7 @@ export default function ContactForm() {
         <label className="block text-[11px] font-[Tahoma,sans-serif] mb-1">Nama:</label>
         <input
           type="text"
+          name="name"
           required
           disabled={status === "sending"}
           value={form.name}
@@ -113,6 +118,7 @@ export default function ContactForm() {
         <label className="block text-[11px] font-[Tahoma,sans-serif] mb-1">Email:</label>
         <input
           type="email"
+          name="email"
           required
           disabled={status === "sending"}
           value={form.email}
@@ -124,6 +130,7 @@ export default function ContactForm() {
       <div>
         <label className="block text-[11px] font-[Tahoma,sans-serif] mb-1">Pesan:</label>
         <textarea
+          name="message"
           required
           rows={5}
           disabled={status === "sending"}

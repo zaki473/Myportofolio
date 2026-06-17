@@ -1,13 +1,68 @@
 [
-  { "name": "HTML / CSS / JS", "level": 90, "icon": "🌐", "category": "frontend" },
-  { "name": "Next.js / React", "level": 80, "icon": "⚛️", "category": "frontend" },
-  { "name": "Laravel / PHP", "level": 85, "icon": "🧡", "category": "backend" },
-  { "name": "Firebase / Supabase", "level": 75, "icon": "🔥", "category": "backend" },
-  { "name": "Python", "level": 70, "icon": "🐍", "category": "language" },
-  { "name": "Flutter / Dart", "level": 80, "icon": "💙", "category": "language" },
-  { "name": "MySQL / PostgreSQL", "level": 85, "icon": "🗄️", "category": "database" },
-  { "name": "IoT / ESP32", "level": 80, "icon": "🔌", "category": "iot" },
-  { "name": "Git / GitHub", "level": 90, "icon": "🐙", "category": "tools" },
-  { "name": "Figma / UI-UX", "level": 75, "icon": "🎨", "category": "tools" },
-  { "name": "Docker / XAMPP", "level": 70, "icon": "🐳", "category": "tools" }
+  {
+    "name": "HTML / CSS / JS",
+    "level": 90,
+    "icon": "🌐",
+    "category": "frontend"
+  },
+  {
+    "name": "Next.js / React",
+    "level": 70,
+    "icon": "⚛️",
+    "category": "frontend"
+  },
+  {
+    "name": "Laravel / PHP",
+    "level": 90,
+    "icon": "🧡",
+    "category": "backend"
+  },
+  {
+    "name": "Firebase / Supabase",
+    "level": 90,
+    "icon": "🔥",
+    "category": "backend"
+  },
+  {
+    "name": "Python",
+    "level": 80,
+    "icon": "🐍",
+    "category": "language"
+  },
+  {
+    "name": "Flutter / Dart",
+    "level": 90,
+    "icon": "💙",
+    "category": "language"
+  },
+  {
+    "name": "MySQL / PostgreSQL",
+    "level": 90,
+    "icon": "🗄️",
+    "category": "database"
+  },
+  {
+    "name": "IoT / ESP32",
+    "level": 85,
+    "icon": "🔌",
+    "category": "iot"
+  },
+  {
+    "name": "Git / GitHub",
+    "level": 90,
+    "icon": "🐙",
+    "category": "tools"
+  },
+  {
+    "name": "Figma / UI-UX",
+    "level": 90,
+    "icon": "🎨",
+    "category": "tools"
+  },
+  {
+    "name": "Docker / XAMPP",
+    "level": 85,
+    "icon": "🐳",
+    "category": "tools"
+  }
 ]

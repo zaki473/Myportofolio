@@ -8,16 +8,66 @@ interface BootScreenProps {
 
 const PROFILE_IMAGE = "https://ik.imagekit.io/p27ub3udc/WhatsApp%20Image%202026-06-16%20at%2014.47.23.jpeg";
 
+const BIOS_LINES = [
+  "ZAKI-BIOS V4.06, An Energy Star Ally",
+  "Copyright (C) 2026, Zaki Athallah Corp.",
+  "",
+  "CPU: Intel(R) Core(TM) i7-12700H CPU @ 2.70GHz",
+  "Speed: 2700MHz",
+  "",
+  "Memory Test : 16384KB OK",
+  "",
+  "Detecting Primary Master ... IDE Hard Disk",
+  "Detecting Primary Slave  ... None",
+  "Detecting Secondary Master ... ATAPI CD-ROM",
+  "Detecting Secondary Slave  ... None",
+  "",
+  "Starting Windows XP Professional (Zaki Edition)...",
+];
+
 export default function BootScreen({ onFinish }: BootScreenProps) {
   const [stage, setStage] = useState<"bios" | "boot" | "welcome" | "finished">("bios");
   const [progress, setProgress] = useState(0);
 
+  // Baris BIOS yang sudah selesai "diketik"
+  const [typedLines, setTypedLines] = useState<string[]>([]);
+  // Baris yang sedang dalam proses diketik (belum penuh)
+  const [currentTyped, setCurrentTyped] = useState("");
+
+  // --- Animasi mengetik untuk BIOS ---
   useEffect(() => {
-    const biosTimeout = setTimeout(() => {
-      setStage("boot");
-    }, 800);
-    return () => clearTimeout(biosTimeout);
-  }, []);
+    if (stage !== "bios") return;
+
+    let lineIdx = 0;
+    let charIdx = 0;
+    setTypedLines([]);
+    setCurrentTyped("");
+
+    const interval = setInterval(() => {
+      if (lineIdx >= BIOS_LINES.length) {
+        clearInterval(interval);
+        // beri sedikit jeda setelah baris terakhir selesai diketik
+        setTimeout(() => setStage("boot"), 500);
+        return;
+      }
+
+      const line = BIOS_LINES[lineIdx];
+
+      if (charIdx < line.length) {
+        charIdx += 1;
+        setCurrentTyped(line.slice(0, charIdx));
+      } else {
+        // baris selesai (atau memang baris kosong/spacer)
+        setTypedLines((prev) => [...prev, line]);
+        setCurrentTyped("");
+        lineIdx += 1;
+        charIdx = 0;
+      }
+      // sedikit variasi kecepatan biar terasa lebih natural, bukan robotik
+    }, 10 + Math.random() * 8);
+
+    return () => clearInterval(interval);
+  }, [stage]);
 
   useEffect(() => {
     if (stage !== "boot") return;
@@ -45,30 +95,32 @@ export default function BootScreen({ onFinish }: BootScreenProps) {
 
   if (stage === "finished") return null;
 
-  // --- BAGIAN BIOS (TETAP) ---
+  // --- BAGIAN BIOS (dengan animasi ngetik) ---
   if (stage === "bios") {
     return (
       <div className="fixed inset-0 bg-black text-[#d4d4d4] font-mono text-[11px] p-6 z-[99999] select-none flex flex-col justify-between">
         <div>
-          <div>ZAKI-BIOS V4.06, An Energy Star Ally</div>
-          <div>Copyright (C) 2026, Zaki Athallah Corp.</div>
-          <br />
-          <div>CPU: Intel(R) Core(TM) i7-12700H CPU @ 2.70GHz</div>
-          <div>Speed: 2700MHz</div>
-          <br />
-          <div>Memory Test : 16384KB OK</div>
-          <br />
-          <div>Detecting Primary Master ... IDE Hard Disk</div>
-          <div>Detecting Primary Slave  ... None</div>
-          <div>Detecting Secondary Master ... ATAPI CD-ROM</div>
-          <div>Detecting Secondary Slave  ... None</div>
-          <br />
-          <div>Starting Windows XP Professional (Zaki Edition)...</div>
+          {typedLines.map((line, i) => (
+            <div key={i}>{line === "" ? "\u00A0" : line}</div>
+          ))}
+          <div>
+            {currentTyped}
+            <span className="bios-cursor">█</span>
+          </div>
         </div>
         <div className="flex justify-between items-end">
           <div>Press DEL to enter SETUP, F8 for Boot Menu</div>
           <div>06/16/2026-IT-UB-MALANG</div>
         </div>
+        <style jsx>{`
+          .bios-cursor {
+            animation: bios-blink 1s steps(1) infinite;
+          }
+          @keyframes bios-blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+          }
+        `}</style>
       </div>
     );
   }
@@ -113,9 +165,6 @@ export default function BootScreen({ onFinish }: BootScreenProps) {
       </div>
     );
   }
-
-  // --- BAGIAN WELCOME (DIUBAH MENJADI MEWAH) ---
-  // --- BAGIAN WELCOME (FOTO DIHAPUS, TETAP MEWAH) ---
   if (stage === "welcome") {
     return (
       <div className="fixed inset-0 bg-[#0058A8] bg-gradient-to-br from-[#003366] via-[#0058A8] to-[#003366] z-[99999] select-none flex flex-col items-center justify-center text-white overflow-hidden">

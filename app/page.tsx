@@ -83,25 +83,63 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          {/* Right: Bliss wallpaper / Profile Image */}
-          <div
-            className="w-[200px] h-full flex-shrink-0 border-l border-gray-300 bg-gray-200 overflow-hidden relative"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={PROFILE_IMAGE}
-              alt="Zaki Profile"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-                const parent = e.currentTarget.parentElement;
-                if (parent) {
-                  parent.style.backgroundImage = "url('/assets/images/bg.jpg')";
-                  parent.style.backgroundSize = "cover";
-                  parent.style.backgroundPosition = "center";
-                }
-              }}
-            />
+          {/* Right: Bliss wallpaper backdrop + foto gaya polaroid */}
+          <div className="w-[200px] h-full flex-shrink-0 border-l border-gray-300 overflow-hidden relative flex items-center justify-center bliss-bg">
+            <div className="polaroid-frame">
+              <div className="polaroid-photo">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={PROFILE_IMAGE}
+                  alt="Zaki Profile"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                    const parent = e.currentTarget.parentElement;
+                    if (parent) {
+                      parent.style.backgroundImage = "url('/assets/images/bg.jpg')";
+                      parent.style.backgroundSize = "cover";
+                      parent.style.backgroundPosition = "center";
+                    }
+                  }}
+                />
+              </div>
+              <p className="polaroid-caption">it&apos;s me! 👋</p>
+            </div>
+
+            <style jsx>{`
+              .bliss-bg {
+                background-image: url('/assets/images/bg.jpg');
+                background-size: cover;
+                background-position: center;
+              }
+              .polaroid-frame {
+                position: relative;
+                z-index: 1;
+                width: 150px;
+                background: #fdfdfb;
+                padding: 8px 8px 14px 8px;
+                box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+                transform: rotate(-5deg);
+                transition: transform 0.35s ease;
+              }
+              .polaroid-frame:hover {
+                transform: rotate(0deg) scale(1.04);
+              }
+              .polaroid-photo {
+                width: 100%;
+                height: 130px;
+                overflow: hidden;
+                background: #d4d4d4;
+              }
+              .polaroid-caption {
+                text-align: center;
+                font-family: cursive;
+                font-style: italic;
+                font-size: 12px;
+                color: #333;
+                margin-top: 6px;
+              }
+            `}</style>
           </div>
         </div>
       </Window>
@@ -178,16 +216,16 @@ export default function Home() {
         <div className="p-3">
           {[
             { "name": "HTML / CSS / JS", "level": 90, "icon": "🌐", "category": "frontend" },
-            { "name": "Next.js / React", "level": 80, "icon": "⚛️", "category": "frontend" },
-            { "name": "Laravel / PHP", "level": 85, "icon": "🧡", "category": "backend" },
-            { "name": "Firebase / Supabase", "level": 75, "icon": "🔥", "category": "backend" },
-            { "name": "Python", "level": 70, "icon": "🐍", "category": "language" },
-            { "name": "Flutter / Dart", "level": 80, "icon": "💙", "category": "language" },
-            { "name": "MySQL / PostgreSQL", "level": 85, "icon": "🗄️", "category": "database" },
-            { "name": "IoT / ESP32", "level": 80, "icon": "🔌", "category": "iot" },
+            { "name": "Next.js / React", "level": 70, "icon": "⚛️", "category": "frontend" },
+            { "name": "Laravel / PHP", "level": 90, "icon": "🧡", "category": "backend" },
+            { "name": "Firebase / Supabase", "level": 90, "icon": "🔥", "category": "backend" },
+            { "name": "Python", "level": 80, "icon": "🐍", "category": "language" },
+            { "name": "Flutter / Dart", "level": 90, "icon": "💙", "category": "language" },
+            { "name": "MySQL / PostgreSQL", "level": 90, "icon": "🗄️", "category": "database" },
+            { "name": "IoT / ESP32", "level": 85, "icon": "🔌", "category": "iot" },
             { "name": "Git / GitHub", "level": 90, "icon": "🐙", "category": "tools" },
-            { "name": "Figma / UI-UX", "level": 75, "icon": "🎨", "category": "tools" },
-            { "name": "Docker / XAMPP", "level": 70, "icon": "🐳", "category": "tools" }
+            { "name": "Figma / UI-UX", "level": 90, "icon": "🎨", "category": "tools" },
+            { "name": "Docker / XAMPP", "level": 85, "icon": "🐳", "category": "tools" }
           ].map((s) => (
             <div key={s.name} className="flex items-center gap-2 py-[3px]">
               <span className="w-4 text-center text-sm">{s.icon}</span>
